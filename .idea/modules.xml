@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BOJ_IJ/BOJ_IJ.iml" filepath="$PROJECT_DIR$/BOJ_IJ/BOJ_IJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/Inteli_J_BOJ.iml" filepath="$PROJECT_DIR$/.idea/Inteli_J_BOJ.iml" />
+      <module fileurl="file://$PROJECT_DIR$/This_Coding_Test/This_Coding_Test.iml" filepath="$PROJECT_DIR$/This_Coding_Test/This_Coding_Test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../js_code/js_code.iml" filepath="$PROJECT_DIR$/../js_code/js_code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../js_code/js_code_/js_code_.iml" filepath="$PROJECT_DIR$/../js_code/js_code_/js_code_.iml" />
+    </modules>
+  </component>
+</project>
