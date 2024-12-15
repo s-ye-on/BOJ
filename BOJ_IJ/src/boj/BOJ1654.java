@@ -1,4 +1,4 @@
-package practice;
+package boj;
 
 import java.util.StringTokenizer;
 import java.io.IOException;

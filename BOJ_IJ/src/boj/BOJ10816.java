@@ -1,11 +1,11 @@
-package practice;
+package boj;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.util.StringTokenizer;
 import java.util.HashMap;
-import java.util.Arrays;
+
 public class BOJ10816 {
     public static void main(String [] args)throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));

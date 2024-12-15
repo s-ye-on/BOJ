@@ -1,4 +1,4 @@
-package practice;
+package boj;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
