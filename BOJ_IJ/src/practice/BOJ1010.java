@@ -1,34 +1,45 @@
 package practice;
 
 import java.io.IOException;
-import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.StringTokenizer;
+import java.io.BufferedReader;
+import java.math.BigInteger;
+import java.util.*;
+
 public class BOJ1010 {
-    public static void main(String [] args)throws IOException{
-
+    public static void main(String [] args)throws IOException {
+        // mCn
+        // m!/n!(m-n)!
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
-        int T = Integer.parseInt(br.readLine());
-        StringBuilder sb = new StringBuilder();
+        int testCase = Integer.parseInt(br.readLine());
 
-        for(int i=0; i<T; i++){
-            st = new StringTokenizer(br.readLine()," ");
-            long N = Integer.parseInt(st.nextToken());
-            long M = Integer.parseInt(st.nextToken());
-            long out =1;
-            long min = M-N;
-            for(long j=M; j>0; j--){
-                out *= j;
-            }
-            for(long k=N; k>0; k--){
-                out /=k;
-            }
-            for(long l=min; l>0; l--){
-                out /=l;
-            }
-            sb.append(out).append("\n");
+        for(int i = 0; i < testCase; i++) {
+            String[] input = br.readLine().split(" ");
+            long N = Integer.parseInt(input[0]);
+            long M = Integer.parseInt(input[1]);
+
+            long L = M-N;
+
+            BigInteger factorialN = factorial(BigInteger.valueOf(N));
+            BigInteger factorialM = factorial(BigInteger.valueOf(M));
+            BigInteger factorialL = factorial(BigInteger.valueOf(L));
+
+            BigInteger result = factorialM.divide(factorialN.multiply(factorialL));
+
+            System.out.println(result);
         }
-        System.out.println(sb);
     }
+    public static BigInteger factorial(BigInteger n) {
+        if(n.equals(BigInteger.ZERO) || n.equals(BigInteger.ONE)){
+            return BigInteger.ONE;
+        }
+        return n.multiply(factorial(n.subtract(BigInteger.ONE)));
+    }
+        /*
+        덧셈 .add
+        뺄셈 .subtract
+        곱셈 .multiply
+        나눗셈 .divide
+        나머지 .remainder
+         */
 }
