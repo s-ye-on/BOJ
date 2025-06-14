@@ -1,53 +1,53 @@
 package boj;
 
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 import java.util.Arrays;
+
 public class BOJ1920 {
-    public static void main(String [] args) throws IOException{
+    public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st;
         StringBuilder sb = new StringBuilder();
+        int n = Integer.parseInt(br.readLine());
+        int [] arr1 = new int[n];
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        int N = Integer.parseInt(br.readLine());
-        st = new StringTokenizer(br.readLine()," ");
-        int [] arr = new int[N];
-        for(int i=0; i<N; i++){
-            arr[i] = Integer.parseInt(st.nextToken());
+        for(int i = 0; i < n; i++) {
+            arr1[i] = Integer.parseInt(st.nextToken());
         }
-        Arrays.sort(arr);
-        int M = Integer.parseInt(br.readLine());
-        st = new StringTokenizer(br.readLine()," ");
+        Arrays.sort(arr1);
 
-        for(int i=0; i<M; i++){
-            int compare = Integer.parseInt(st.nextToken());
-            if(binarySearch(arr, compare) >= 0){
-                sb.append(1).append("\n");
+        int m = Integer.parseInt(br.readLine());
+        int [] arr2 = new int[m];
+        st = new StringTokenizer(br.readLine());
+        for(int i = 0; i < m; i++) {
+            arr2[i] = Integer.parseInt(st.nextToken());
+        }
+        for(int i =0; i<m; i++){
+            boolean found = false;
+            int target = arr2[i];
+            int left = 0;
+            int right = n-1;
+            while(left <= right){
+                int mid = (left + right)/2;
+                if(arr1[mid] == target){
+                    sb.append(1).append("\n");
+                    found = true;
+                    break;
+                }
+                else if(arr1[mid] > target){
+                    right = mid -1;
+                }
+                else{
+                    left = mid +1;
+                }
             }
-            else{
+            if(!found){
                 sb.append(0).append("\n");
             }
         }
         System.out.println(sb);
-    }
-    public static int binarySearch(int [] arr , int key){
-        int hi = arr.length-1;
-        int lo = 0;
-
-        while (lo<= hi){
-            int mid = (hi + lo)/2;
-            if(key > arr[mid]){
-                lo = mid +1;
-            }
-            else if(key < arr[mid]){
-                hi = mid-1;
-            }
-            else{
-                return mid;
-            }
-        }
-        return -1;
     }
 }
