@@ -1,12 +1,9 @@
-package prac;
+package pracice;
 
 import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.util.StringTokenizer;
-import java.util.Scanner;
 import java.io.IOException;
-import java.util.Stack;
-import java.util.HashSet;
 
 public class Main {
     public static int [] arr;

@@ -32,6 +32,7 @@ public class BOJ2573 {
     }
     public static int countIcebergs(){
         //dfs로 만들자!
+        // 빙산 덩어리가 몇 개 있는지 세어주는 기능
         visited = new boolean[N][M];
         int count =0;
         for(int i=0; i<N; i++){
@@ -45,6 +46,7 @@ public class BOJ2573 {
         return count;
     }
     public static void dfs(int y, int x){
+        // 하나의 빙산을 찾기 위한 탐색 기능
         visited[y][x] = true;
         for(int i=0; i<4; i++){
             int ny = y+dy[i];
